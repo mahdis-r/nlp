@@ -8,9 +8,11 @@ import joblib
 from flask import Flask, jsonify, render_template, request
 
 # Support both "python -m app.server" and "python app/server.py"
-try:  # pragma: no cover - runtime resilience
+try:
+    # When running as a module: py -m app.server
     from .train import train_and_save, MODEL_FILENAME
-except ImportError:  # noqa: F401
+except Exception:
+    # When running as a script: py app\server.py
     from train import train_and_save, MODEL_FILENAME  # type: ignore
 
 

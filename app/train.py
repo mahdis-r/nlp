@@ -1,7 +1,7 @@
 import os
 import random
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -111,7 +111,7 @@ def build_pipeline() -> Pipeline:
     )
 
 
-def train_and_save(model_path: Path | None = None) -> Path:
+def train_and_save(model_path: Optional[Path] = None) -> Path:
     if model_path is None:
         model_path = Path(__file__).with_name(MODEL_FILENAME)
 
