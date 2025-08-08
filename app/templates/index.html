@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sentiment Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sentiment Classifier</h1>
+      <p>Enter text below and click Predict to see if it's bad, good, or mutual.</p>
+
+      <div class="card">
+        <textarea id="inputText" rows="6" placeholder="Type or paste text here..."></textarea>
+        <div class="actions">
+          <button id="predictBtn">Predict</button>
+        </div>
+      </div>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
